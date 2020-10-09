@@ -238,7 +238,11 @@ function appMenu() {
     }
 
     function buildTeam() {
-
+        //create output directory path
+        if (!fs.existsSync(OUTPUT_DIR)) {
+            fs.mrkdirSync(OUTPUT_DIR)
+        }
+        fs.writeFileSync(outputPath, render(teamMembers, "utf-8"));
     }
 
     createManager();
