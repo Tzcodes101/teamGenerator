@@ -49,7 +49,7 @@ function appMenu() {
                 message: "What is your manager's email?",
                 validate: answer => {
                     const pass = answer.match(
-                        /\S+@\@+\.@+/
+                        /\S+@\S+\.\S+/
                     );
                     if (pass) {
                         return true;
@@ -117,7 +117,7 @@ function appMenu() {
                     if (answer !== "") {
                         return true;
                     }
-                    return "Please enter at lease one character.";
+                    return "Please enter at least one character.";
                 }
             },
             {
@@ -140,7 +140,7 @@ function appMenu() {
                 message: "What is your engineer's email?",
                 validate: answer => {
                     const pass = answer.match(
-                        /\S+@\@+\.@+/
+                        /\S+@\S+\.\S+/
                     );
                     if (pass) {
                         if (idArray.includes(answer)){
@@ -154,7 +154,7 @@ function appMenu() {
             },
             {
                 type: "input",
-                name: "engineerGithub",
+                name: "engineerGitHub",
                 message: "What is your engineer's GitHub username?",
                 validate: answer => {
                     if (answer !== "") {
@@ -164,7 +164,7 @@ function appMenu() {
                 }
             },
         ]).then(answers => {
-            const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.managerEmail, answers.engineerGithub);
+            const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGitHub);
             teamMembers.push(engineer);
             idArray.push(answers.engineerId);
             createTeam();
@@ -205,7 +205,7 @@ function appMenu() {
                 message: "What is your intern's email?",
                 validate: answer => {
                     const pass = answer.match(
-                        /\S+@\@+\.@+/
+                        /\S+@\S+\.\S+/
                     );
                     if (pass) {
                         if (idArray.includes(answer)){
@@ -240,9 +240,9 @@ function appMenu() {
     function buildTeam() {
         //create output directory path
         if (!fs.existsSync(OUTPUT_DIR)) {
-            fs.mrkdirSync(OUTPUT_DIR)
+            fs.mkdirSync(OUTPUT_DIR)
         }
-        fs.writeFileSync(outputPath, render(teamMembers, "utf-8"));
+        fs.writeFileSync(outputPath, render(teamMembers), "utf-8");
     }
 
     createManager();
