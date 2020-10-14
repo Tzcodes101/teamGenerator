@@ -1,7 +1,7 @@
 <h1 align=center>Team Generator</h1>
 
 - Link to GitHub repository: https://github.com/Tzcodes101/teamGenerator
-- Link to animation of use: https://drive.google.com/file/d/1vKyXeOpyiaUAXbl8Atxy7ZrZR89uj7a0/view
+
 
 ## Description
 This project is a software engineering team generator command line application that prompts a user for information about the team manager and team members. The application passes all unit tests provided with jest. When the user has completed building a team, the appliction creates an HTML file (team.html) that appealingly displays (in the browser) a corresponding team roster. 
