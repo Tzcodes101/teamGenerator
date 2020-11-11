@@ -32,6 +32,11 @@ test("Can set employee email", () => {
 })
 
 //can get name with proper function
+test("getName function returns name", () => {
+    const testName = "Rose";
+    const e = new Employee(testName);
+    expect(e.getName()).toBe(testName);
+})
 
 //can get id with proper function
 
