@@ -203,8 +203,12 @@ function createTeam() {
                     return "Please enter a valid username of at least one character.";
                 }
             }
-        ]);
-        chooseMembers();
+        ]).then(answers => {
+            const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.ghUsername);
+            teamMembers.push(engineer);
+            idArr.push(answers.engineerId);
+            chooseMembers();
+        });
     }
 
     //renderTeam
