@@ -105,8 +105,8 @@ function addIntern() {
             type: "input",
             name: "internSchool",
             message: "What is the name of your intern's school?",
-            validate: (name) => {
-                if (name !== "") {
+            validate: (input) => {
+                if (input !== "") {
                     return true;
                 }
                 return "Please enter a valid school name of at least one character.";
@@ -116,6 +116,55 @@ function addIntern() {
 }
 
 //create engineer, add name (validate has letters), id(validate is number), email(validate has email characters), github name(validate has letters),
+function addEngineer() {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "engineerName",
+            message: "What is the name of your engineer?",
+            validate: (name) => {
+                if (name !== "") {
+                    return true;
+                }
+                return "Please enter a valid name of at least one character.";
+            }
+        },
+        {
+            type: "input",
+            name: "engineerId",
+            message: "What is the ID of your engineer?",
+            validate: (input) => {
+                if (input.match(/^[1-9]\d*$/)) {
+                    return true;
+                }
+                return "Please enter a valid number.";
+            }
+        },
+        {
+            type: "input",
+            name: "engineerEmail",
+            message: "What is the Email of your engineer?",
+            validate: (input) => {
+                if (input.match(/\S+@\S+\.\S+/)) {
+                    return true;
+                }
+                return "Please enter a valid number.";
+            }
+        },
+        {
+            type: "input",
+            name: "ghUsername",
+            message: "What is your engineer's github username??",
+            validate: (input) => {
+                if (input !== "") {
+                    return true;
+                }
+                return "Please enter a valid school name of at least one character.";
+            }
+        }]);
+    addTeamMembers();
+
+}
 
 //renderTeam
 function addTeamMembers() {
