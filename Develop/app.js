@@ -79,6 +79,78 @@ function addManager() {
 }
 
 //create intern add name (validate has letters), id(validate is number), email(validate has email characters), school (validate has letters)
+function addIntern() {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "internName",
+            message: "What is the name of your team manager?",
+            validate: (name) => {
+                if(name !== "") {
+                    return true;
+                }
+                return "Please enter a valid name of at least one character.";
+            }
+        },
+        {
+            type: "input",
+            name: "internId",
+            message: "What is the ID of your team manager?",
+            validate: (input) => {
+                if(input.match(/^[1-9]\d*$/)) {
+                    return true;
+                }
+                return "Please enter a valid number.";
+            }
+        },
+        {
+            type: "input",
+            name: "managerEmail",
+            message: "What is the Email of your team manager?",
+            validate: (input) => {
+                if(input.match(/\S+@\S+\.\S+/)) {
+                    return true;
+                }
+                return "Please enter a valid number.";
+            }
+        },
+        {
+            type: "input",
+            name: "officeNum",
+            message: "What is the office number of your team manager?",
+            validate: (input) => {
+                if(input.match(/^[1-9]\d*$/)) {
+                    return true;
+                }
+                return "Please enter a valid number.";
+            }
+        },
+        {
+            type: "list",
+            name: "choice",
+            message: "Which type of team member would you like to add?",
+            choices: [
+                "Engineer",
+                "Intern",
+                "I would not like to add any more team members"
+            ]
+        },
+    ]).then(answer => {
+        switch(answer.choice) {
+            case "Engineer":
+                addEngineer();
+                break;
+            case "Intern":
+                addIntern();
+                break;
+            case "I I would not like to add any more team members":
+                break;
+            default:
+                createTeam();
+        }
+    });
+
+}
 
 //create engineer, add name (validate has letters), id(validate is number), email(validate has email characters), github name(validate has letters),
 
