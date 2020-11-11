@@ -84,7 +84,7 @@ function createTeam() {
             ]
         }
     ]).then(answer => {
-        switch (answer.choice) {
+        switch (answer.memberChoice) {
             case "Engineer":
                 addEngineer();
                 break;
@@ -155,6 +155,7 @@ function createTeam() {
 
     //create engineer, add name (validate has letters), id(validate is number), email(validate has email characters), github name(validate has letters),
     function addEngineer() {
+        console.log("Adding engineer");
         inquirer.prompt([
             {
                 type: "input",
