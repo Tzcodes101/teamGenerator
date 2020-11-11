@@ -11,7 +11,6 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 const render = require("./lib/htmlRenderer");
 
 const teamMembers = [];
-const idArr = [];
 
 
 // Write code to use inquirer to gather information about the development team members,
@@ -68,7 +67,6 @@ function createTeam() {
         ]).then(answers => {
             const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.officeNum);
             teamMembers.push(manager);
-            idArr.push(answers.managerId);
             chooseMembers();
         });
     }
@@ -93,10 +91,10 @@ function createTeam() {
             case "Intern":
                 addIntern();
                 break;
-            case "I I would not like to add any more team members":
+            case "I would not like to add any more team members":
                 break;
             default:
-                createTeam();
+                renderTeam();
         }
     });
     }
@@ -151,7 +149,6 @@ function createTeam() {
         ]).then(answers => {
             const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
             teamMembers.push(intern);
-            idArr.push(answers.internId);
             chooseMembers();
         });
     }
@@ -194,7 +191,7 @@ function createTeam() {
             },
             {
                 type: "input",
-                name: "ghUsername",
+                name: "github",
                 message: "What is your engineer's github username??",
                 validate: (input) => {
                     if (input !== "") {
@@ -204,14 +201,20 @@ function createTeam() {
                 }
             }
         ]).then(answers => {
-            const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.ghUsername);
+            const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.github);
             teamMembers.push(engineer);
-            idArr.push(answers.engineerId);
             chooseMembers();
         });
     }
 
-    //renderTeam
+    //renderTeam, check if path exists, and if not, create one. Otherwise, write 
+    function renderTeam() {
+        if(!fs.existsSync(OUTPUT_DIR)) {
+            fs.mkdir(OUTPUT_DIR);
+        }
+        fs.writeFileSync(outputPath, render(teamMembers), "utf8" );
+
+    }
 
     addManager();
 }

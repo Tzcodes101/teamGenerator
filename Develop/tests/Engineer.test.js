@@ -11,10 +11,10 @@ test("Can set github username", () => {
 
 
 //getGhUSername returns github user name
-test("getGhUsername returns github username", () => {
+test("getGithub returns github username", () => {
     const gh = "Test";
     const e = new Engineer("Rose", 12, "hi@hi.com", gh);
-    expect(e.getGhUserName()).toBe(gh);
+    expect(e.getGithub()).toBe(gh);
 });
 
 //can return the proper role 
