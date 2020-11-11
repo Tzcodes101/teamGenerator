@@ -10,6 +10,9 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+const teamMembers = [];
+const idArr = [];
+
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
@@ -62,8 +65,12 @@ function createTeam() {
                     return "Please enter a valid number.";
                 }
             }
-        ]);
-        chooseMembers();
+        ]).then(answers => {
+            const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.officeNum);
+            teamMembers.push(manager);
+            idArr.push(answers.managerId);
+            chooseMembers();
+        });
     }
 
     function chooseMembers() {
@@ -141,8 +148,12 @@ function createTeam() {
                     return "Please enter a valid school name of at least one character.";
                 }
             },
-        ]);
-        chooseMembers();
+        ]).then(answers => {
+            const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
+            teamMembers.push(intern);
+            idArr.push(answers.internId);
+            chooseMembers();
+        });
     }
 
     //create engineer, add name (validate has letters), id(validate is number), email(validate has email characters), github name(validate has letters),
