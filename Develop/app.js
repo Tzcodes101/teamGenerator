@@ -50,12 +50,12 @@ function createTeam() {
                     if (input.match(/\S+@\S+\.\S+/)) {
                         return true;
                     }
-                    return "Please enter a valid number.";
+                    return "Please enter a valid email.";
                 }
             },
             {
                 type: "input",
-                name: "officeNum",
+                name: "officeNumber",
                 message: "What is the office number of your team manager?",
                 validate: (input) => {
                     if (input.match(/^[1-9]\d*$/)) {
@@ -68,6 +68,7 @@ function createTeam() {
             const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.officeNumber);
             teamMembers.push(manager);
             chooseMembers();
+            renderTeam();
         });
     }
 
@@ -121,7 +122,7 @@ function createTeam() {
                     if (input.match(/^[1-9]\d*$/)) {
                         return true;
                     }
-                    return "Please enter a valid number.";
+                    return "Please enter a valid email.";
                 }
             },
             {
@@ -188,7 +189,7 @@ function createTeam() {
                     if (input.match(/\S+@\S+\.\S+/)) {
                         return true;
                     }
-                    return "Please enter a valid number.";
+                    return "Please enter a valid email.";
                 }
             },
             {
