@@ -25,6 +25,11 @@ test("Can set employee id", function() {
 })
 
 //can set emp email
+test("Can set employee email", () => {
+    const testEmail = "hi@hi.com";
+    const e = new Employee("Rose", 30, testEmail);
+    expect(e.email).toBe(testEmail);
+})
 
 //can get name with proper function
 
