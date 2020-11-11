@@ -5,11 +5,13 @@ body {
 
 .team-heading {
     padding-top: 50px;
-    color: grey;
+    color: lightgrey;
+    text-shadow: 2px 2px 4px black;
 }
 
 .card-header {
-    background: blue;
+    background: rgb(50, 165, 241);
+    font-weight: bolder;
 }
 
 .row {
@@ -20,6 +22,8 @@ body {
     margin-right: 1rem;
     margin-left: 1rem;
     border: none;
+    font-weight: bolder;
+    box-shadow: 0 2px 4px 0 rgb(27, 24, 24), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .list-group-item {
