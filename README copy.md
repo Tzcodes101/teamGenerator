@@ -1,15 +1,18 @@
 <h1 align=center>Team Generator</h1>
 
 - Link to GitHub repository: https://github.com/Tzcodes101/teamGenerator
+- Link to video walkthrough of application: https://drive.google.com/file/d/1ekicyJ2YRToc6cHEJpi4VMzduAleDSBN/view
 
 
 ## Description
 This project is a software engineering team generator command line application that prompts a user for information about the team manager and team members. The application passes all unit tests provided with jest. When the user has completed building a team, the appliction creates an HTML file (team.html) that appealingly displays (in the browser) a corresponding team roster. 
 
-This application functions off of inquirer prompts, asking for a manager's, engineer's, or intern's name, id, and email. A user is prompted for, when appropriate to the role, a manager's office number, an engineer's GitHub username, or an intern's school. The user is also then able to choose which type of team member they would like to add, as well as when they are done building their team. 
+This application functions off of inquirer prompts, asking for a manager's, engineer's, or intern's name, id, and email. A user is prompted for, when appropriate, the manager's office number, an engineer's GitHub username, or an intern's school. The user is also then able to choose which type of team member they would like to add, as well as when they are done building their team. 
 
 Here is a screenshot of an example team-display:
-![Getting Started](02-Homework\Assets\teamGeneratorpng.png)
+
+
+![Image of generated team](Develop/assets/teamGenerator2.jpg)
 
 
 ## Table of Contents
