@@ -1,0 +1,22 @@
+{
+  "name": "teamgenerator",
+  "version": "1.0.0",
+  "description": "generate your team in the CLI",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tzcodes101/teamGenerator.git"
+  },
+  "author": "Talia Zisman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tzcodes101/teamGenerator/issues"
+  },
+  "homepage": "https://github.com/Tzcodes101/teamGenerator#readme",
+  "dependencies": {
+    "inquirer": "^7.3.3"
+  }
+}
