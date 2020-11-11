@@ -26,7 +26,7 @@ function appMenu() {
                     if (answer !== "") {
                         return true;
                     }
-                    return "Please enter at lease one character.";
+                    return "Please enter at least one character.";
                 }
             },
             {
@@ -40,7 +40,7 @@ function appMenu() {
                     if (pass) {
                         return true;
                     }
-                    return "Please enter at a positive number greater than zero.";
+                    return "Please enter a positive number greater than zero.";
                 }
             },
             {
