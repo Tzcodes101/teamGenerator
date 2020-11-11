@@ -4,12 +4,12 @@
 
 //getRole returns engineer
 
-//create employee class with name, id, email
 class Engineer {
-    constructor(name, id, email) {
+    constructor(name, id, email, ghUsername) {
         this.name = name;
         this.id = id;
         this.email = email;
+        this.ghUsername = ghUsername;
     }
 
     //be able to:
@@ -27,6 +27,10 @@ class Engineer {
     //get email
     getEmail() {
         return this.email;
+    }
+
+    getGhUserName() {
+        return this.ghUsername;
     }
 
     //get role (returns employee)
