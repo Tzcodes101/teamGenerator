@@ -9,70 +9,65 @@ test("Intern is an object", function() {
 })
 
 //if you can set the name
-test("Can set engineer name", function () {
+test("Can set intern name", function () {
     const name = "Rose";
-    const e = new Engineer(name);
+    const e = new Intern(name);
     expect(e.name).toBe(name);
 });
 
 //can set the ID
 test("Can set engineer id", function() {
     const testId = 80;
-    const e = new Engineer("Rose", testId);
+    const e = new Intern("Rose", testId);
     expect(e.id).toBe(testId);
 })
 
 //can set email
-test("Can set engineer email", () => {
+test("Can set intern email", () => {
     const testEmail = "hi@hi.com";
-    const e = new Engineer("Rose", 30, testEmail);
+    const e = new Intern("Rose", 30, testEmail);
     expect(e.email).toBe(testEmail);
 });
 
-//can set engineer github username
-test("Can set github username", () => {
-    const gh = "Rose22";
-    const e = new Engineer("Rose", 30, "rose@rose.com", gh);
-    expect(e.ghUsername).toBe(gh);
-})
+//can set intern school
+test("Can set intern school", () => {
+    const testSchool = "College";
+    const e = new Intern("Rose", 30, "rose@rose.com", testSchool);
+    expect(e.school).toBe(testSchool);
+});
+
 //can get name with proper function
 test("getName function returns name", () => {
     const testName = "Rose";
-    const e = new Engineer(testName);
+    const e = new Intern(testName);
     expect(e.getName()).toBe(testName);
 });
 
 //can get id with proper function
 test("getId function returns id", () => {
     const testId = 6;
-    const e = new Engineer("Rose", testId);
+    const e = new Intern("Rose", testId);
     expect(e.getId()).toBe(testId);
 });
 
 //can get email with proper function
 test("getEmail function returns email", () => {
     const testEmail = "Hi@hi.com";
-    const e = new Engineer("Rose", 8, testEmail);
+    const e = new Intern("Rose", 8, testEmail);
     expect(e.getEmail()).toBe(testEmail);
 });
 
 
-test("getEmail function returns email", () => {
-    const testEmail = "Hi@hi.com";
-    const e = new Engineer("Rose", 8, testEmail);
-    expect(e.getEmail()).toBe(testEmail);
-});
-
-//getGhUSername returns github user name
-test("getGhUsername returns github username", () => {
-    const gh = "Test";
-    const e = new Engineer("Rose", 12, "hi@hi.com", gh);
-    expect(e.getGhUserName()).toBe(gh);
+//getSchool returns school
+test("getSchool function returns school", () => {
+    const testSchool = "Test";
+    const e = new Intern("Rose", 12, "hi@hi.com", testSchool);
+    expect(e.getSchool()).toBe(testSchool);
 });
 
 //can return the proper role 
 test("getRole function returns engineer", () => {
-    const testRole = "Engineer";
-    const e = new Engineer("Rose", 5, "hi@hi2.com");
+    const testRole = "Intern";
+    const e = new Intern("Rose", 5, "hi@hi2.com", "school");
     expect(e.getRole()).toBe(testRole);
 });
