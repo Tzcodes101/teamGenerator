@@ -2,3 +2,27 @@ body {
     background: rgb(2,0,36);
     font-family: 'Raleway', sans-serif;
 }
+
+.team-heading {
+    padding-top: 50px;
+    color: grey;
+}
+
+.card-header {
+    background: blue;
+}
+
+.row {
+    margin-bottom: 5rem;
+}
+
+.employee-card {
+    margin-right: 1rem;
+    margin-left: 1rem;
+    border: none;
+}
+
+.list-group-item {
+    border: none;
+    text-align: center;
+}
