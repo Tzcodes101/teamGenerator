@@ -6,18 +6,23 @@ const Employee = require("../lib/Employee");
 
 //if employee is an object
 test("Employee is an object", function() {
-    var e = new Employee();
+    const e = new Employee();
     expect(typeof(e)).toBe("object");
 })
 
 //if you can set the name
 test("Can set employee name", function () {
-    var name = "Rose";
-    var e = new Employee(name);
+    const name = "Rose";
+    const e = new Employee(name);
     expect(e.name).toBe(name);
-})
+});
 
 //can set the ID
+test("Can set employee id", function() {
+    const testId = 80;
+    const e = new Employee("Rose", testId);
+    expect(e.id).toBe(testId);
+})
 
 //can set emp email
 
