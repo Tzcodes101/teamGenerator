@@ -1,7 +1,14 @@
+//require Employee from the proper path
+const { TestScheduler } = require("jest");
+const Employee = require("../libEmployee");
+
 //create a test that will check for:
 
-
 //if employee is an object
+test("Employee is an object", function() {
+    var employee = new Employee();
+    expect(typeof(employee).toBe("object"));
+})
 
 //if you can set the name
 
