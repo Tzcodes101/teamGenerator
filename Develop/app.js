@@ -23,7 +23,7 @@ function addManager() {
             name: "managerName",
             message: "What is the name of your team manager?",
             validate: (name) => {
-                if(name !== "") {
+                if (name !== "") {
                     return true;
                 }
                 return "Please enter a valid name of at least one character.";
@@ -34,7 +34,7 @@ function addManager() {
             name: "managerId",
             message: "What is the ID of your team manager?",
             validate: (input) => {
-                if(input.match(/^[1-9]\d*$/)) {
+                if (input.match(/^[1-9]\d*$/)) {
                     return true;
                 }
                 return "Please enter a valid number.";
@@ -45,70 +45,7 @@ function addManager() {
             name: "managerEmail",
             message: "What is the Email of your team manager?",
             validate: (input) => {
-                if(input.match(/\S+@\S+\.\S+/)) {
-                    return true;
-                }
-                return "Please enter a valid number.";
-            }
-        },
-        {
-            type: "list",
-            name: "choice",
-            message: "Which type of team member would you like to add?",
-            choices: [
-                "Engineer",
-                "Intern",
-                "I would not like to add any more team members"
-            ]
-        },
-    ]).then(answer => {
-        switch(answer.choice) {
-            case "Engineer":
-                addEngineer();
-                break;
-            case "Intern":
-                addIntern();
-                break;
-            case "I I would not like to add any more team members":
-                break;
-            default:
-                createTeam();
-        }
-    });
-
-}
-
-//create intern add name (validate has letters), id(validate is number), email(validate has email characters), school (validate has letters)
-function addIntern() {
-    inquirer.prompt([
-        {
-            type: "input",
-            name: "internName",
-            message: "What is the name of your team manager?",
-            validate: (name) => {
-                if(name !== "") {
-                    return true;
-                }
-                return "Please enter a valid name of at least one character.";
-            }
-        },
-        {
-            type: "input",
-            name: "internId",
-            message: "What is the ID of your team manager?",
-            validate: (input) => {
-                if(input.match(/^[1-9]\d*$/)) {
-                    return true;
-                }
-                return "Please enter a valid number.";
-            }
-        },
-        {
-            type: "input",
-            name: "managerEmail",
-            message: "What is the Email of your team manager?",
-            validate: (input) => {
-                if(input.match(/\S+@\S+\.\S+/)) {
+                if (input.match(/\S+@\S+\.\S+/)) {
                     return true;
                 }
                 return "Please enter a valid number.";
@@ -119,24 +56,82 @@ function addIntern() {
             name: "officeNum",
             message: "What is the office number of your team manager?",
             validate: (input) => {
-                if(input.match(/^[1-9]\d*$/)) {
+                if (input.match(/^[1-9]\d*$/)) {
+                    return true;
+                }
+                return "Please enter a valid number.";
+            },
+        }]);
+        addTeamMembers();
+}
+
+//create intern add name (validate has letters), id(validate is number), email(validate has email characters), school (validate has letters)
+function addIntern() {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "internName",
+            message: "What is the name of your intern?",
+            validate: (name) => {
+                if (name !== "") {
+                    return true;
+                }
+                return "Please enter a valid name of at least one character.";
+            }
+        },
+        {
+            type: "input",
+            name: "internId",
+            message: "What is the ID of your intern?",
+            validate: (input) => {
+                if (input.match(/^[1-9]\d*$/)) {
                     return true;
                 }
                 return "Please enter a valid number.";
             }
         },
         {
+            type: "input",
+            name: "internEmail",
+            message: "What is the Email of your intern?",
+            validate: (input) => {
+                if (input.match(/\S+@\S+\.\S+/)) {
+                    return true;
+                }
+                return "Please enter a valid number.";
+            }
+        },
+        {
+            type: "input",
+            name: "internSchool",
+            message: "What is the name of your intern's school?",
+            validate: (name) => {
+                if (name !== "") {
+                    return true;
+                }
+                return "Please enter a valid school name of at least one character.";
+            }
+        }]);
+    addTeamMembers();
+}
+
+//create engineer, add name (validate has letters), id(validate is number), email(validate has email characters), github name(validate has letters),
+
+//renderTeam
+function addTeamMembers() {
+    inquirer.prompt([
+        {
             type: "list",
-            name: "choice",
+            name: "memberChoice",
             message: "Which type of team member would you like to add?",
             choices: [
                 "Engineer",
                 "Intern",
                 "I would not like to add any more team members"
             ]
-        },
+        }
     ]).then(answer => {
-        switch(answer.choice) {
+        switch (answer.choice) {
             case "Engineer":
                 addEngineer();
                 break;
@@ -151,10 +146,6 @@ function addIntern() {
     });
 
 }
-
-//create engineer, add name (validate has letters), id(validate is number), email(validate has email characters), github name(validate has letters),
-
-//renderTeam
 
 //give user options to build their team
 function createTeam() {
@@ -170,7 +161,7 @@ function createTeam() {
             ]
         },
     ]).then(answer => {
-        switch(answer.choice) {
+        switch (answer.choice) {
             case "Yes":
                 addManager();
                 break;
