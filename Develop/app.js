@@ -65,7 +65,7 @@ function createTeam() {
                 }
             }
         ]).then(answers => {
-            const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.officeNum);
+            const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.officeNumber);
             teamMembers.push(manager);
             chooseMembers();
         });
