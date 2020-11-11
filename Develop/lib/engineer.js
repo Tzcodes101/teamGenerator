@@ -35,7 +35,7 @@ class Engineer {
 
     //get role (returns employee)
     getRole() {
-        return "Employee";
+        return "Engineer";
     }
 }
 
