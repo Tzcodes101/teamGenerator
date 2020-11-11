@@ -209,14 +209,19 @@ function createTeam() {
 
     //renderTeam, check if path exists, and if not, create one. Otherwise, write 
     function renderTeam() {
-        if(!fs.existsSync(OUTPUT_DIR)) {
-            fs.mkdir(OUTPUT_DIR);
+        if (!fs.existsSync(OUTPUT_DIR)) {
+            fs.mkdirSync(OUTPUT_DIR)
         }
-        fs.writeFileSync(outputPath, render(teamMembers), "utf8" );
-
+        try {
+            fs.writeFileSync(outputPath, render(teamMembers), "utf-8");
+        } catch(err) {
+            if (err) {
+                console.log(err);
+            }
+        }
     }
 
-    addManager();
+    addManager()
 }
 
 createTeam();

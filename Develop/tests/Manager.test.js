@@ -7,15 +7,15 @@ const Manager = require("../lib/Manager");
 test("Can set manager office number", () => {
     const testNum = 12;
     const e = new Manager("Rose", 30, "rose@rose.com", testNum);
-    expect(e.officeNum).toBe(testNum);
+    expect(e.officeNumber).toBe(testNum);
 });
 
 
 //getOfficeNum function returns office number
-test("getOfficeNum function returns office number", () => {
+test("getOfficeNumber function returns office number", () => {
     const testNum = 12;
     const e = new Manager("Rose", 12, "hi@hi.com", testNum);
-    expect(e.getOfficeNum()).toBe(testNum);
+    expect(e.getOfficeNumber()).toBe(testNum);
 });
 
 //can return the proper role 
