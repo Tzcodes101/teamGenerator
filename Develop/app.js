@@ -150,6 +150,7 @@ function createTeam() {
             const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
             teamMembers.push(intern);
             chooseMembers();
+            renderTeam();
         });
     }
 
@@ -205,6 +206,8 @@ function createTeam() {
             const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.github);
             teamMembers.push(engineer);
             chooseMembers();
+            render
+            renderTeam();
         });
     }
 
