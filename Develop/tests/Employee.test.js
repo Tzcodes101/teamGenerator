@@ -14,7 +14,7 @@ test("Employee is an object", function() {
 test("Can set employee name", function () {
     var name = "Rose";
     var e = new Employee(name);
-    expect(e).toBe(name);
+    expect(e.name).toBe(name);
 })
 
 //can set the ID
