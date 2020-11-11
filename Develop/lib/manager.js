@@ -13,7 +13,7 @@ class Manager extends Employee {
     //be able to:
 
     getOfficeNum() {
-        return this.getOfficeNum;
+        return this.officeNum;
     }
 
     //get role (returns employee)
@@ -22,4 +22,4 @@ class Manager extends Employee {
     }
 }
 
-module.exports = Engineer;
+module.exports = Manager;
