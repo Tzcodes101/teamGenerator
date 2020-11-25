@@ -31,7 +31,9 @@ To install, a user must clone the code for the project from it's GitHub reposito
 To use this project, a user must open app.js in an integrated terminal. The user can then run node app.js, answering the questions in the terminal. Once all questions are complete, the answers will be added to the html templates, and can be opened in the browser.
 
 ## License
-This project is not covered by any license.
+ ![badge](https://img.shields.io/badge/license-ISC-brightgreen)
+
+ This application is covered by the ISC license. 
 
 ## Contributors
 - Talia Zisman
