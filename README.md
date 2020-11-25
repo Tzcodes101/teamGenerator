@@ -1,5 +1,7 @@
 <h1 align=center>Team Generator</h1>
 
+![badge](https://img.shields.io/badge/license-ISC-brightgreen)
+
 - Link to GitHub repository: https://github.com/Tzcodes101/teamGenerator
 - Link to video walkthrough of application: https://drive.google.com/file/d/1ekicyJ2YRToc6cHEJpi4VMzduAleDSBN/view
 
