@@ -19,7 +19,7 @@ Here is a screenshot of an example team-display:
 - [Description](#Description)
 - [Installation](#Installation)
 - [Usage](#Usage)
-- [Languages] (#Languages)
+- [Languages](#Languages)
 - [License](#License)
 - [Contributors](#Contributors)
 - [Testing](#Testing)
